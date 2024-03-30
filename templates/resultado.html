@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de la Hipoteca</title>
+</head>
+<body>
+    <h1>Resultado de la Hipoteca</h1>
+    <p>Cuota Mensual: ${{ cuota_mensual }}</p>
+    <h2>Historial de Pagos:</h2>
+    <table>
+        <tr>
+            <th>Mes</th>
+            <th>Cuota</th>
+            <th>Interés</th>
+            <th>Principal</th>
+            <th>Saldo Pendiente</th>
+        </tr>
+        {% for mes, cuota, interes, principal, saldo in historial_pagos %}
+        <tr>
+            <td>{{ mes }}</td>
+            <td>${{ cuota }}</td>
+            <td>${{ interes }}</td>
+            <td>${{ principal }}</td>
+            <td>${{ saldo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
